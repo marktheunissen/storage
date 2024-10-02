@@ -35,6 +35,9 @@ OPEN_CATEGORY_PARAMS=(
 	"dataset.format" "dataset.num_samples_per_file"
 	# reader params
 	"reader.data_loader"
+
+	# Needed to swap in custom s3 loader
+	"reader.data_loader_classname" "reader.data_loader_sampler"
 )
 HYDRA_OUTPUT_CONFIG_DIR="configs"
 EXTRA_PARAMS=(

@@ -1,0 +1,10 @@
+/data
+
+/results/*
+!results/.gitkeep
+
+/hydra_log/*
+!hydra_log/.gitkeep
+
+/checkpoints/*
+!checkpoints/.gitkeep
