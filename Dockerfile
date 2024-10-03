@@ -12,6 +12,7 @@ RUN apt-get update && \
     cmake \
     iputils-ping \
     iproute2 \
+    curl \
     bc
 
 RUN python3 -m pip install --upgrade pip
@@ -28,3 +29,7 @@ RUN python setup.py develop
 RUN pip install --no-cache-dir "git+https://github.com/awslabs/s3-connector-for-pytorch.git@main#egg=s3torchconnector&subdirectory=s3torchconnector"
 
 WORKDIR /workspace/mlperfstorage
+
+# To avoid installing all of DALI, just grab the script that is a silent dependency of DLIO
+RUN curl -s https://raw.githubusercontent.com/NVIDIA/DALI/refs/heads/main/tools/tfrecord2idx -o /usr/local/bin/tfrecord2idx
+RUN chmod +x /usr/local/bin/tfrecord2idx
