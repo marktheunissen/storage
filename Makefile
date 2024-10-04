@@ -9,6 +9,7 @@ DOCKER_RUN := @docker run --rm \
 	-v ./dlio_benchmark/dlio_benchmark:/workspace/mlperfstorage/dlio_benchmark/dlio_benchmark \
 	-v ./storage-conf:/workspace/mlperfstorage/storage-conf \
 	-v ./benchmark.sh:/workspace/mlperfstorage/benchmark.sh \
+	--network host \
 	--env-file env-container \
 	-it mlperfstorage
 
