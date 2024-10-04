@@ -33,6 +33,8 @@ In the yaml config file, set Debug: True for debug level logging
 
 ## fork
 
+Note: This only applied to an old approach which used Ubuntu 22.04 as a base image, 24.04 has appeared to fix the need for this env var.
+
 `RDMAV_FORK_SAFE=1` is set in env vars, due to error:
 
     A process has executed an operation involving a call
@@ -44,6 +46,7 @@ In the yaml config file, set Debug: True for debug level logging
 
 - https://github.com/mlcommons/storage/issues/44
 - https://github.com/mlcommons/storage/issues/62
+- https://github.com/argonne-lcf/dlio_benchmark/issues/9
 
 Tried changing `multiprocessing_context: spawn` in the yaml but there were further errors that indicated lack of support in DLIO
 

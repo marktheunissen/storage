@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 RUN apt-get update && \
     DEBIAN_FRONTEND=noninteractive apt-get install -y git \
@@ -15,13 +15,15 @@ RUN apt-get update && \
     curl \
     bc
 
-RUN python3 -m pip install --upgrade pip
 RUN python3 -m venv /workspace/venv
 ENV PATH="/workspace/venv/bin:$PATH"
-RUN python3 -m pip install pybind11
 
-COPY . /workspace/mlperfstorage
+COPY ./benchmark.sh /workspace/mlperfstorage/benchmark.sh
+COPY ./dlio_benchmark /workspace/mlperfstorage/dlio_benchmark
+COPY ./report.py /workspace/mlperfstorage/report.py
 WORKDIR /workspace/mlperfstorage/dlio_benchmark
+
+RUN pip install setuptools pybind11
 
 RUN python setup.py build
 RUN python setup.py develop

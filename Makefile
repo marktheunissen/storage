@@ -15,6 +15,7 @@ DOCKER_RUN := @docker run --rm \
 submodule:
 	@cd dlio_benchmark && git submodule update --init --recursive
 	@cd dlio_benchmark && git checkout s3torch
+	@cd dlio_benchmark && git pull
 
 build:
 	@docker build -t mlperfstorage .
