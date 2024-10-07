@@ -1,5 +1,5 @@
 
-.PHONY: submodule build bash gen train mirror
+.PHONY: submodule build bash gen mirror benchmark benchmark-tf
 
 DOCKER_RUN := @docker run --rm \
 	-v ./data:/workspace/mlperfstorage/data \

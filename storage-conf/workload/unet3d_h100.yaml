@@ -6,6 +6,7 @@ workflow:
   generate_data: False
   train: True
   checkpoint: True
+  # debug: True
 
 dataset: 
   data_folder: data/unet3d/

@@ -27,7 +27,7 @@ Do benchmark:
 
 # Debugging
 
-In the yaml config file, set Debug: True for debug level logging
+In the yaml config file, set `debug: True` for debug level logging, under "workflow" section
 
 # Notes on hacks
 
